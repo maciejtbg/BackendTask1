@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -45,7 +46,7 @@ class SortElementsTest {
 
     @Test
     void shouldReturnSingleElementList() {
-        List<Integer> singleElementList = Arrays.asList(1);
+        List<Integer> singleElementList = Collections.singletonList(1);
         List<Integer> sortedList = SortingApp.sortListAscending(singleElementList);
 
         assertEquals(singleElementList, sortedList);

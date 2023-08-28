@@ -17,8 +17,7 @@ public class SortingApp {
 
     private static String adjustFormat(List<Integer> sortedList) {
         String output = sortedList.toString();
-        return output.replace("[","").replace("]","").replaceAll(",","");
-
+        return output.replace("[", "").replace("]", "").replaceAll(",", "");
     }
 
     static int getDistinctElements(List<Integer> sortedListAscending) {
