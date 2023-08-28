@@ -5,14 +5,20 @@ import java.util.*;
 public class SortingApp {
     public static void main(String[] args) {
         List<Integer> inputList = getIntegerList();
+//        List<Integer> inputList = Arrays.asList(5, 2, 1, 4, 4, 3); //uncomment this code to pass input list from here
         List<Integer> sortedList = sortListAscending(inputList); // sort list without using Stream API to decrease libraries usage
 
-        System.out.println("Input list: " + inputList);
-        System.out.println("Sorted list: " + sortedList);
-        System.out.println("List count: " + sortedList.size());
-        System.out.println("Distinct: " + getDistinctElements(sortedList));
-        System.out.println("Min value: " + sortedList.get(0));
-        System.out.println("Max value: " + sortedList.get(sortedList.size() - 1));
+        System.out.println(adjustFormat(sortedList));
+        System.out.println("count: " + sortedList.size());
+        System.out.println("distinct: " + getDistinctElements(sortedList));
+        System.out.println("min: " + sortedList.get(0));
+        System.out.println("max: " + sortedList.get(sortedList.size() - 1));
+    }
+
+    private static String adjustFormat(List<Integer> sortedList) {
+        String output = sortedList.toString();
+        return output.replace("[","").replace("]","").replaceAll(",","");
+
     }
 
     static int getDistinctElements(List<Integer> sortedListAscending) {

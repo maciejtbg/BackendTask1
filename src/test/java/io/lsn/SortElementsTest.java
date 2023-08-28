@@ -27,12 +27,12 @@ class SortElementsTest {
     }
 
     @Test
-    void shouldReturnSortedList(){
-        List<Integer> inputList = Arrays.asList(5, 2, 1, 4, 7);
-        List<Integer> expectedList = Arrays.asList(1, 2, 4, 5, 7);
+    void shouldReturnSortedList() {
+        List<Integer> inputList = Arrays.asList(5, 2, -1, 4, 7);
+        List<Integer> expectedList = Arrays.asList(-1, 2, 4, 5, 7);
         List<Integer> sortedList = SortingApp.sortListAscending(inputList);
 
-        assertEquals(expectedList,sortedList);
+        assertEquals(expectedList, sortedList);
     }
 
     @Test
