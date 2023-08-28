@@ -2,26 +2,28 @@ package io.lsn;
 
 import java.util.*;
 
-public class SortElements {
+public class SortingApp {
     public static void main(String[] args) {
         List<Integer> inputList = getIntegerList();
-        sortListAscending(inputList); // sort list without using Stream API to decrease libraries usage
+        List<Integer> sortedList = sortListAscending(inputList); // sort list without using Stream API to decrease libraries usage
 
-        System.out.println("Input list: "+inputList);
-        System.out.println("Sorted list: "+inputList);
-        System.out.println("List count: "+inputList.size());
-        System.out.println("Distinct: "+getDistinctElements(inputList));
-        System.out.println("Min value: "+inputList.get(0));
-        System.out.println("Max value: "+inputList.get(inputList.size()-1));
+        System.out.println("Input list: " + inputList);
+        System.out.println("Sorted list: " + sortedList);
+        System.out.println("List count: " + sortedList.size());
+        System.out.println("Distinct: " + getDistinctElements(sortedList));
+        System.out.println("Min value: " + sortedList.get(0));
+        System.out.println("Max value: " + sortedList.get(sortedList.size() - 1));
     }
 
-    private static int getDistinctElements(List<Integer> sortedListAscending) {
+    static int getDistinctElements(List<Integer> sortedListAscending) {
         Set<Integer> distinctElements = new HashSet<>(sortedListAscending);
         return distinctElements.size();
     }
 
-    private static void sortListAscending(List<Integer> inputList) {
-        Collections.sort(inputList);
+    static List<Integer> sortListAscending(List<Integer> inputList) {
+        List<Integer> sortedList = new ArrayList<>(inputList);
+        Collections.sort(sortedList);
+        return sortedList;
     }
 
     private static List<Integer> getIntegerList() {
